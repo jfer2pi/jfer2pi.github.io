@@ -110,7 +110,7 @@ footer { color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--ru
 <header>
   <span class="label">Solar PV performance engineering · Madrid</span>
   <h1>Fernando Rodríguez Alvarado</h1>
-  <p class="lede">I keep utility-scale solar plants producing what they should. I've spent nine years running solar fleets across the US, Europe and Latin America, after eight years as a maintenance and reliability engineer at Shell, and I build the analytics in R that find the lost energy.</p>
+  <p class="lede">I keep utility-scale solar plants producing what they should. I've spent nine years running solar fleets of up to 3 GW across the US, Europe and Latin America, after eight years as a maintenance and reliability engineer at Shell, and I build the analytics in R that find the lost energy.</p>
   <div class="facts">
     <span>PE, North Carolina</span><span>MIT, Mechanical Engineering</span><span>M.Sc. Solar PV</span><span>MBA</span><span>ES · EN · IT</span>
   </div>
@@ -150,7 +150,7 @@ footer { color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--ru
       <thead><tr><th>Country</th><th>Source</th><th>The hard part</th><th>R lines</th></tr></thead>
       <tbody>
         <tr><td><a href="https://github.com/jfer2pi/eia_solar_pv">United States</a></td><td>EIA-860M monthly + EIA-860 Schedule 3_3</td><td>Joining array data (tracking, bifacial, MWdc, ILR) onto the monthly inventory, so the owner table shows fleet ILR and tracker share</td><td class="n">1,164</td></tr>
-        <tr><td><a href="https://github.com/jfer2pi/mexico_pv">Mexico</a></td><td>GEM Solar Power Tracker + CNE permits</td><td>Tiered matching of government generation permits to plants (exact, strong, possible) and a monthly GitHub Action that flags new releases</td><td class="n">1,203</td></tr>
+        <tr><td><a href="https://github.com/jfer2pi/mexico_pv">Mexico</a><br><a class="live" href="https://jfer2pi-pv-mexico.share.connect.posit.cloud/">Live app</a></td><td>GEM Solar Power Tracker + CNE permits</td><td>Tiered matching of government generation permits to plants (exact, strong, possible) and a monthly GitHub Action that flags new releases</td><td class="n">1,203</td></tr>
         <tr><td><a href="https://github.com/jfer2pi/brazil_pv">Brazil</a><br><a class="live" href="https://jfer2pi-pv-brazil.share.connect.posit.cloud/">Live app</a></td><td>ANEEL SIGA + RALIE</td><td>Equity MW per owner parsed from free-text ownership, cleaning swapped coordinates, and a fallback for a site that blocks foreign traffic</td><td class="n">1,111</td></tr>
         <tr><td><a href="https://github.com/jfer2pi/australia_pv">Australia</a></td><td>AEMO NEM + Geoscience Australia</td><td>Three-step geolocation (AEMO, GA name match, Nominatim) and graceful fallbacks when both agencies refuse cloud servers</td><td class="n">1,424</td></tr>
         <tr><td><a href="https://github.com/jfer2pi/spain_pv">Spain</a><br><a class="live" href="https://jfer2pi-pv-spain.share.connect.posit.cloud/">Live app</a></td><td>GEM tracker + Red Eléctrica REData</td><td>Rejecting a thin official registry for a usable one, and fitting a 3,990-phase build inside a 60-second cloud start limit</td><td class="n">897</td></tr>
@@ -212,8 +212,8 @@ footer { color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--ru
   <div class="xp">
     <div class="xp-row"><span class="label">2023 – now · Madrid</span><div class="xp-body"><p><strong>Cubico Sustainable Investments</strong> · Solar Performance Manager <span class="sub">(Senior Solar Performance Analyst until July 2026)</span></p>
       <ul>
-        <li>Owns performance for a utility-scale PV portfolio in Spain, Italy, the UK, the US, Mexico, Colombia and Uruguay.</li>
-        <li>Led the selection, procurement and implementation of BaxEnergy as the portfolio's monitoring platform, and manages it today.</li>
+        <li>Owns performance for a utility-scale PV portfolio of 80+ sites and about 1 GW in Spain, Italy, the UK, the US, Mexico, Colombia and Uruguay.</li>
+        <li>Led the selection, procurement and implementation of BaxEnergy as the portfolio's monitoring platform, onboarding all 80+ sites, and manages it today.</li>
         <li>Built the team's R analytics: SCADA extraction from monitoring platforms and historians, data-availability alerts, string-level exception reports and PR trending.</li>
         <li>Develops performance methods for the fleet: irradiance QC, loss attribution, soiling and wash timing, tracker diagnostics and operational yield assessments.</li>
       </ul></div></div>
@@ -225,8 +225,8 @@ footer { color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--ru
       </ul></div></div>
     <div class="xp-row"><span class="label">2018 – 2021</span><div class="xp-body"><p><strong>Cypress Creek Renewables</strong> · Operations Engineering Manager, then Director and Senior Director of Control Center Operations</p>
       <ul>
-        <li>Managed the control room: 24/7 remote monitoring of the US solar fleet and dispatch of the response to plant outages.</li>
-        <li>Ran the Power Factors contract and onboarded the fleet onto the platform.</li>
+        <li>Managed the fleet through its growth from 1 GW to more than 3 GW, running the control room: 24/7 remote monitoring and dispatch of the response to plant outages.</li>
+        <li>Ran the Power Factors contract and onboarded 2 GW of the fleet onto the platform.</li>
         <li>Led the thermal imaging program for the fleet.</li>
         <li>Owned maintenance planning and scheduling.</li>
         <li>Technical lead for plant communications: datalogger configuration, Modbus and remote connectivity.</li>
