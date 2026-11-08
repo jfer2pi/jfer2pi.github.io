@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fernando Rodríguez Alvarado</title>
+<meta name="description" content="Solar PV performance engineer in Madrid. Open-data dashboards and performance analytics in R.">
+<meta property="og:title" content="Fernando Rodríguez Alvarado">
+<meta property="og:description" content="Solar PV performance engineer. Open-data dashboards and performance analytics in R.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one narrow reading column; the hero carries a measured POA day curve, sections read like a plant data sheet. */
+:root {
+  --paper: #f2f4f1;
+  --panel: #e7ebe6;
+  --ink: #17222b;
+  --muted: #5a6670;
+  --rule: #c9d1cc;
+  --sun: #b8740f;
+  --sky: #2f6f8f;
+  --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #10171d; --panel: #18222a; --ink: #e4e9e6; --muted: #93a0a8;
+    --rule: #2a3741; --sun: #e8a43c; --sky: #6fb3d2; color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font: 16px/1.6 var(--body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.wrap { max-width: 880px; margin: 0 auto; padding-block: 56px 72px; display: grid; gap: 72px; }
+a { color: var(--sky); text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--sun); outline-offset: 3px; }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; line-height: 1.1; }
+h1 { font-size: clamp(2.4rem, 6vw, 3.8rem); font-weight: 700; letter-spacing: -0.02em; }
+h2 { font-size: 1.6rem; font-weight: 700; }
+h3 { font-size: 1.2rem; font-weight: 700; }
+p { margin: 0; max-width: 65ch; }
+.label { font: 500 0.75rem/1.3 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.mono { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+
+/* hero */
+header { display: grid; gap: 20px; }
+.lede { font-size: 1.2rem; color: var(--ink); }
+.facts { display: flex; flex-wrap: wrap; gap: 8px 20px; font: 0.9rem var(--mono); color: var(--muted); }
+.links { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn { display: inline-block; padding: 9px 16px; border: 1px solid var(--rule); border-radius: 6px; color: var(--ink); text-decoration: none; font-weight: 500; }
+.btn:hover { border-color: var(--sun); }
+.btn.primary { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+figure.curve { margin: 8px 0 0; display: grid; gap: 6px; }
+figure.curve svg { width: 100%; height: auto; display: block; }
+figcaption { font: 0.78rem var(--mono); color: var(--muted); }
+
+section { display: grid; gap: 24px; }
+.sec-head { display: grid; gap: 8px; border-top: 1px solid var(--rule); padding-top: 20px; }
+
+/* fleet series table */
+.table-wrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; min-width: 620px; font-size: 0.92rem; }
+th, td { text-align: left; padding: 12px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { font: 500 0.72rem var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+td.n { font-family: var(--mono); color: var(--sun); white-space: nowrap; }
+td a { font-weight: 600; }
+
+/* project entries */
+.projects { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); }
+.proj { background: var(--panel); border-radius: 8px; padding: 22px; display: grid; gap: 12px; align-content: start; min-width: 0; }
+.proj ul { margin: 0; padding-left: 18px; display: grid; gap: 4px; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag { font: 0.75rem var(--mono); padding: 2px 8px; border: 1px solid var(--rule); border-radius: 4px; color: var(--muted); }
+
+/* capabilities */
+.caps { display: grid; gap: 0; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); border-top: 1px solid var(--rule); }
+.cap { padding: 18px 16px 18px 0; border-bottom: 1px solid var(--rule); display: grid; gap: 6px; min-width: 0; }
+.cap p { color: var(--muted); font-size: 0.95rem; }
+
+/* experience */
+.xp { display: grid; gap: 0; }
+.xp-row { display: grid; grid-template-columns: 180px 1fr; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--rule); }
+.xp-row .label { padding-top: 3px; }
+@media (max-width: 560px) { .xp-row { grid-template-columns: 1fr; gap: 4px; } }
+
+footer { color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--rule); padding-top: 20px; display: grid; gap: 6px; }
+@media (prefers-reduced-motion: no-preference) {
+  #poa-line { stroke-dasharray: 1400; stroke-dashoffset: 1400; animation: draw 1.6s ease-out 0.2s forwards; }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <span class="label">Solar PV performance engineering · Madrid</span>
+  <h1>Fernando Rodríguez Alvarado</h1>
+  <p class="lede">I keep utility-scale solar plants producing what they should. I've spent about 15 years on PV assets across the US, Europe and Latin America, and I build the analytics in R that find the lost energy.</p>
+  <div class="facts">
+    <span>PE, North Carolina</span><span>MIT, Mechanical Engineering</span><span>M.Sc. Solar PV</span><span>MBA</span><span>ES · EN · IT</span>
+  </div>
+  <div class="links">
+    <a class="btn primary" href="#work">See the work</a>
+    <a class="btn" href="https://github.com/jfer2pi">GitHub @jfer2pi</a>
+  </div>
+  <figure class="curve" aria-label="Plane-of-array irradiance over a day: a single-axis tracker against fixed tilt">
+    <svg viewBox="0 0 880 200" role="img">
+      <g stroke="var(--rule)" stroke-width="1">
+        <line x1="40" y1="170" x2="860" y2="170"/>
+        <line x1="40" y1="20" x2="40" y2="170"/>
+      </g>
+      <g font-family="IBM Plex Mono, monospace" font-size="11" fill="var(--muted)">
+        <text x="40" y="188">06:00</text><text x="430" y="188" text-anchor="middle">12:00</text><text x="860" y="188" text-anchor="end">18:00</text>
+        <text x="34" y="24" text-anchor="end">1000</text><text x="34" y="174" text-anchor="end">0</text>
+      </g>
+      <path id="fixed-line" fill="none" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="4 4"/>
+      <path id="poa-line" fill="none" stroke="var(--sun)" stroke-width="2.5"/>
+      <g font-family="IBM Plex Mono, monospace" font-size="11">
+        <text x="700" y="44" fill="var(--sun)">tracker POA</text>
+        <text x="700" y="60" fill="var(--muted)">fixed tilt</text>
+      </g>
+    </svg>
+    <figcaption>Clear-sky plane-of-array irradiance, W/m², single-axis tracker vs fixed tilt. Most of my days are spent on the gap between curves like these and what the SCADA says.</figcaption>
+  </figure>
+</header>
+
+<section id="work">
+  <div class="sec-head">
+    <span class="label">Open-data series · 5 countries</span>
+    <h2>Solar PV Fleet dashboards</h2>
+    <p>Each country publishes its solar fleet differently, or not at all. These apps turn every national source into the same view: a bubble map of plants by stage, the capacity trajectory, capacity by region and by owner, and a searchable site table. Each is one self-contained R/Shiny <span class="mono">app.R</span> with open maps and no API keys.</p>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Country</th><th>Source</th><th>The hard part</th><th>R lines</th></tr></thead>
+      <tbody>
+        <tr><td><a href="https://github.com/jfer2pi/eia_solar_pv">United States</a></td><td>EIA-860M monthly + EIA-860 Schedule 3_3</td><td>Joining array data (tracking, bifacial, MWdc, ILR) onto the monthly inventory, so the owner table shows fleet ILR and tracker share</td><td class="n">1,164</td></tr>
+        <tr><td><a href="https://github.com/jfer2pi/mexico_pv">Mexico</a></td><td>GEM Solar Power Tracker + CNE permits</td><td>Tiered matching of government generation permits to plants (exact, strong, possible) and a monthly GitHub Action that flags new releases</td><td class="n">1,203</td></tr>
+        <tr><td><a href="https://github.com/jfer2pi/brazil_pv">Brazil</a></td><td>ANEEL SIGA + RALIE</td><td>Equity MW per owner parsed from free-text ownership, cleaning swapped coordinates, and a fallback for a site that blocks foreign traffic</td><td class="n">1,111</td></tr>
+        <tr><td><a href="https://github.com/jfer2pi/australia_pv">Australia</a></td><td>AEMO NEM + Geoscience Australia</td><td>Three-step geolocation (AEMO, GA name match, Nominatim) and graceful fallbacks when both agencies refuse cloud servers</td><td class="n">1,424</td></tr>
+        <tr><td><a href="https://github.com/jfer2pi/spain_pv">Spain</a></td><td>GEM tracker + Red Eléctrica REData</td><td>Rejecting a thin official registry for a usable one, and fitting a 3,990-phase build inside a 60-second cloud start limit</td><td class="n">897</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <span class="label">Other open-data apps</span>
+    <h2>Beyond solar</h2>
+  </div>
+  <div class="projects">
+    <article class="proj">
+      <h3><a href="https://github.com/jfer2pi/combustibl_es">Fuel·ES</a></h3>
+      <p>Fuel prices at all ~12,000 Spanish service stations, plus a route planner that tells you where to stop and how many litres to buy.</p>
+      <ul>
+        <li>Exact dynamic-programming optimiser over stops and tank levels, never below your reserve</li>
+        <li>Prices the time lost to detours, not just the fuel</li>
+        <li>OSRM routing, corridor search, saving vs the route median</li>
+      </ul>
+      <div class="tags"><span class="tag">R/Shiny</span><span class="tag">optimisation</span><span class="tag">MITECO open data</span></div>
+    </article>
+    <article class="proj">
+      <h3><a href="https://github.com/jfer2pi/tren_es">Renfe Live</a></h3>
+      <p>Live positions of Spain's high-speed, long-distance and regional trains on an open rail map.</p>
+      <ul>
+        <li>Parses the GTFS-RT feed and joins static GTFS for routes and stations</li>
+        <li>Flags data anomalies: impossible jumps, duplicates, frozen positions</li>
+        <li>Bunching indicator for moving trains closing on stopped ones</li>
+      </ul>
+      <div class="tags"><span class="tag">R/Shiny</span><span class="tag">GTFS-RT</span><span class="tag">data QC</span></div>
+    </article>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <span class="label">Day job</span>
+    <h2>Performance analytics I build</h2>
+    <p>Most of this runs on operating plants and stays internal. Happy to walk through the methods.</p>
+  </div>
+  <div class="caps">
+    <div class="cap"><h3>Irradiance QC</h3><p>Onsite pyranometers checked against satellite references, with tracker deviation diagnostics for SAT, DAT and fixed tilt.</p></div>
+    <div class="cap"><h3>Loss attribution</h3><p>Digital-twin waterfalls following IEC 61724-1: availability, clipping, curtailment, soiling and residual.</p></div>
+    <div class="cap"><h3>Soiling and cleaning</h3><p>Soiling rates extracted from DC current and irradiance where no soiling station exists, and wash timing optimised against them.</p></div>
+    <div class="cap"><h3>Tracker diagnostics</h3><p>Measured angles benchmarked against ideal backtracking, and stow detection from POA sensors alone.</p></div>
+    <div class="cap"><h3>Energy yield</h3><p>Operational yield assessments with long-term climatology correction and Monte Carlo uncertainty (P50/P90).</p></div>
+    <div class="cap"><h3>SCADA pipelines</h3><p>API extraction from monitoring platforms and historians, daily data-availability alerts and string-level exception reports.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <span class="label">Experience</span>
+    <h2>Where I've worked</h2>
+  </div>
+  <div class="xp">
+    <div class="xp-row"><span class="label">Now · Madrid</span><div><strong>Cubico Sustainable Investments</strong>, Solar Performance Manager. Utility-scale PV portfolio across Spain, Italy, the UK, the US, Mexico, Colombia and Uruguay.</div></div>
+    <div class="xp-row"><span class="label">Before</span><div><strong>Greenbacker Capital</strong></div></div>
+    <div class="xp-row"><span class="label">Before</span><div><strong>Cypress Creek Renewables</strong></div></div>
+    <div class="xp-row"><span class="label">Before</span><div><strong>Royal Dutch Shell</strong></div></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <span class="label">Toolkit</span>
+    <h2>How I work</h2>
+    <p>R first: tidyverse, data.table for the heavy lifting, purrr and parallel workers, tidymodels for classifiers, Shiny and Quarto for delivery, pvlib through reticulate. Apps deploy to Posit Connect Cloud from GitHub, with Actions keeping data current. I write these with Claude as a coding partner: the specs, the engineering judgment and the review are mine.</p>
+  </div>
+</section>
+
+<footer>
+  <span>Fernando Rodríguez Alvarado · <a href="https://github.com/jfer2pi">github.com/jfer2pi</a></span>
+  <span>Map data © OpenStreetMap contributors in the linked apps. Site built with Claude's help.</span>
+</footer>
+
+</div>
+<script>
+// Clear-sky POA, rough model: sun elevation over a 06:00-18:00 equinox day.
+(function () {
+  var x0 = 40, x1 = 860, y0 = 170, yTop = 20, n = 120, track = [], fixed = [];
+  for (var i = 0; i <= n; i++) {
+    var t = i / n, h = (t - 0.5) * Math.PI;          // hour angle, -90..90 deg
+    var el = Math.cos(h) * 0.85;                       // sin(elevation) proxy
+    var dni = el > 0 ? 950 * Math.exp(-0.14 / Math.max(el, 0.05)) : 0;
+    var lim = Math.min(Math.abs(h), 60 * Math.PI / 180); // tracker limit 60 deg
+    var trk = dni * Math.cos(Math.abs(h) - lim) + 90 * el;
+    var fix = dni * Math.max(0, Math.cos(h)) * 0.98 + 90 * el;
+    var x = x0 + t * (x1 - x0), s = (y0 - yTop) / 1000;
+    track.push(x.toFixed(1) + "," + (y0 - trk * s).toFixed(1));
+    fixed.push(x.toFixed(1) + "," + (y0 - fix * s).toFixed(1));
+  }
+  document.getElementById("poa-line").setAttribute("d", "M" + track.join("L"));
+  document.getElementById("fixed-line").setAttribute("d", "M" + fixed.join("L"));
+})();
+</script>
+</body>
+</html>
