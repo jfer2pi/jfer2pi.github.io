@@ -91,6 +91,10 @@ td a { font-weight: 600; }
 .xp { display: grid; gap: 0; }
 .xp-row { display: grid; grid-template-columns: 180px 1fr; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--rule); }
 .xp-row .label { padding-top: 3px; }
+.xp-body { display: grid; gap: 8px; min-width: 0; }
+.xp-body ul { margin: 0; padding-left: 18px; display: grid; gap: 4px; color: var(--muted); font-size: 0.95rem; }
+.sub { color: var(--muted); font-size: 0.9rem; }
+.xp-row { padding: 20px 0; }
 @media (max-width: 560px) { .xp-row { grid-template-columns: 1fr; gap: 4px; } }
 
 footer { color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--rule); padding-top: 20px; display: grid; gap: 6px; }
@@ -206,10 +210,31 @@ footer { color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--ru
     <h2>Where I've worked</h2>
   </div>
   <div class="xp">
-    <div class="xp-row"><span class="label">2023 – now · Madrid</span><div><strong>Cubico Sustainable Investments</strong>, Solar Performance Manager. Utility-scale PV portfolio across Spain, Italy, the UK, the US, Mexico, Colombia and Uruguay.</div></div>
-    <div class="xp-row"><span class="label">2021 – 2023</span><div><strong>Greenbacker Capital</strong>, VP of Engineering, Operations.</div></div>
-    <div class="xp-row"><span class="label">2018 – 2021</span><div><strong>Cypress Creek Renewables</strong>, Operations Engineering Manager, then Director of Control Center Operations.</div></div>
-    <div class="xp-row"><span class="label">2010 – 2017</span><div><strong>Royal Dutch Shell</strong>, Deer Park. Maintenance, rotating equipment and production support engineering.</div></div>
+    <div class="xp-row"><span class="label">2023 – now · Madrid</span><div class="xp-body"><p><strong>Cubico Sustainable Investments</strong> · Solar Performance Manager <span class="sub">(Senior Solar Performance Analyst until July 2026)</span></p>
+      <ul>
+        <li>Owns performance for a utility-scale PV portfolio in Spain, Italy, the UK, the US, Mexico, Colombia and Uruguay.</li>
+        <li>Built the team's R analytics: SCADA extraction from monitoring platforms and historians, data-availability alerts, string-level exception reports and PR trending.</li>
+        <li>Develops performance methods for the fleet: irradiance QC, loss attribution, soiling and wash timing, tracker diagnostics and operational yield assessments.</li>
+      </ul></div></div>
+    <div class="xp-row"><span class="label">2021 – 2023</span><div class="xp-body"><p><strong>Greenbacker Capital</strong> · VP of Engineering, Operations</p>
+      <ul>
+        <li>Led operations engineering for an owner-operator's renewable fleet.</li>
+        <li>Technical lead on monitoring platforms (AlsoEnergy, Power Factors, Locus, Draker, Skytron), aerial thermography (Raptor Maps, Zeitview) and inverter and tracker OEMs.</li>
+        <li>Performance analysis of operating plants: PR and availability, soiling rates, I-V curve traces.</li>
+      </ul></div></div>
+    <div class="xp-row"><span class="label">2018 – 2021</span><div class="xp-body"><p><strong>Cypress Creek Renewables</strong> · Operations Engineering Manager, then Director and Senior Director of Control Center Operations</p>
+      <ul>
+        <li>Ran the remote operations control center for a large US solar fleet, monitoring and dispatching response to plant outages.</li>
+        <li>Technical lead for plant communications: datalogger configuration, Modbus and remote connectivity.</li>
+        <li>Grew from engineering manager to senior director over three years.</li>
+      </ul></div></div>
+    <div class="xp-row"><span class="label">2010 – 2017 · Texas</span><div class="xp-body"><p><strong>Royal Dutch Shell</strong>, Deer Park · Production support, rotating equipment and site maintenance engineer</p>
+      <ul>
+        <li>Used data to give maintenance leadership insight into equipment performance, and brought machine-learning ideas to move from preventive to predictive maintenance.</li>
+        <li>Investigated maintenance incidents, ran root cause analyses and recommended fixes to stop repeat failures.</li>
+        <li>Planned and executed major maintenance projects and turnaround work with cross-functional teams.</li>
+        <li>Mentored new maintenance engineers.</li>
+      </ul></div></div>
   </div>
 </section>
 
