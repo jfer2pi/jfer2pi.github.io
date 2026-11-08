@@ -93,7 +93,9 @@ td a { font-weight: 600; }
 .xp-row .label { padding-top: 3px; }
 .xp-body { display: grid; gap: 8px; min-width: 0; }
 .xp-body ul { margin: 0; padding-left: 18px; display: grid; gap: 4px; color: var(--muted); font-size: 0.95rem; }
-.sub { color: var(--muted); font-size: 0.9rem; }
+.sub { display: block; color: var(--muted); font-size: 0.88rem; font-weight: 400; }
+.role { font-weight: 500; }
+.scope { font: 0.82rem/1.5 var(--mono); color: var(--sun); }
 .xp-row { padding: 20px 0; }
 @media (max-width: 560px) { .xp-row { grid-template-columns: 1fr; gap: 4px; } }
 
@@ -110,9 +112,9 @@ footer { color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--ru
 <header>
   <span class="label">Solar PV performance engineering · Madrid</span>
   <h1>Fernando Rodríguez Alvarado</h1>
-  <p class="lede">I keep utility-scale solar plants producing what they should. I've spent nine years running solar fleets of up to 3 GW across the US, Europe and Latin America, after eight years as a maintenance and reliability engineer at Shell, and I build the analytics in R that find the lost energy.</p>
+  <p class="lede">I keep utility-scale solar plants producing what they should. I've spent eight years leading solar performance and operations teams on fleets of up to 3.5 GW across the US, Europe and Latin America, after seven years as a maintenance and reliability engineer at Shell, and I build the analytics in R that find the lost energy.</p>
   <div class="facts">
-    <span>PE, North Carolina</span><span>MIT, Mechanical Engineering</span><span>M.Sc. Solar PV</span><span>MBA</span><span>ES · EN · IT</span>
+    <span>PE, North Carolina</span><span>MIT, Mechanical Engineering</span><span>M.Sc. Solar PV</span><span>MBA, Quantic</span><span>ES · EN · IT</span>
   </div>
   <div class="links">
     <a class="btn primary" href="#work">See the work</a>
@@ -206,38 +208,60 @@ footer { color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--ru
 
 <section>
   <div class="sec-head">
-    <span class="label">Experience</span>
+    <span class="label">Experience · 8 years in renewables, 7 in oil and gas</span>
     <h2>Where I've worked</h2>
   </div>
   <div class="xp">
-    <div class="xp-row"><span class="label">2023 – now · Madrid</span><div class="xp-body"><p><strong>Cubico Sustainable Investments</strong> · Solar Performance Manager <span class="sub">(Senior Solar Performance Analyst until July 2026)</span></p>
+    <div class="xp-row"><span class="label">2023 – now · Madrid</span><div class="xp-body">
+      <p><strong>Cubico Sustainable Investments</strong></p>
+      <p class="role">Solar Performance Manager · 2026 – now<span class="sub">Senior Solar Performance Analyst · 2023 – 2026</span></p>
+      <p class="scope">80+ sites, about 1 GW · Spain, Italy, UK, US, Mexico, Colombia, Uruguay</p>
       <ul>
-        <li>Owns performance for a utility-scale PV portfolio of 80+ sites and about 1 GW in Spain, Italy, the UK, the US, Mexico, Colombia and Uruguay.</li>
-        <li>Led the selection, procurement and implementation of BaxEnergy as the portfolio's monitoring platform, onboarding all 80+ sites, and manages it today.</li>
-        <li>Built the team's R analytics: SCADA extraction from monitoring platforms and historians, data-availability alerts, string-level exception reports and PR trending.</li>
-        <li>Develops performance methods for the fleet: irradiance QC, loss attribution, soiling and wash timing, tracker diagnostics and operational yield assessments.</li>
+        <li>Sets the performance and data-quality standards for the global portfolio and directs the team's analytical roadmap.</li>
+        <li>Led the selection, procurement and implementation of BaxEnergy as the global monitoring platform: a 9-vendor evaluation across functions and countries, a 33% cost reduction negotiated on the contract, and all 80+ sites onboarded with a quality review of each. Manages the platform today.</li>
+        <li>Directed the US portfolio recovery plan at 5 major sites (100+ MWac each), splitting losses into soiling, inverter availability, DC health and curtailment, with measurable PR gains. Recognised with the 2025 DRIVE Award for Value Creation.</li>
+        <li>Led the emergency recovery of a 100 MW US plant after a tornado: third-party EL imaging and inspections, the restoration plan, EPC agreements and post-recovery testing.</li>
+        <li>Built a 7-module training program (guides and video) to bring country teams in 7 countries onto the platform, and mentored the US performance team to full independence.</li>
+        <li>Set a standard KPI framework for every technology in the fleet, including tracker performance and availability guarantees in O&amp;M and EPC contracts.</li>
+        <li>Built the R codebase that integrates 10+ data sources (BaxEnergy, Greenbyte, Nispera, Canary, Solcast, SolarGIS, Raptor Maps, Zeitview, Isotrol, GPM, Power Factors), plus a module-manufacturer performance method tested on 100+ inverter datasets.</li>
       </ul></div></div>
-    <div class="xp-row"><span class="label">2021 – 2023</span><div class="xp-body"><p><strong>Greenbacker Capital</strong> · VP of Engineering, Operations</p>
+    <div class="xp-row"><span class="label">2021 – 2023 · Remote</span><div class="xp-body">
+      <p><strong>Greenbacker Capital</strong></p>
+      <p class="role">VP of Engineering, Operations</p>
+      <p class="scope">Team of 5 · Distributed solar, wind and storage fleet</p>
       <ul>
-        <li>Led operations engineering for an owner-operator's renewable fleet.</li>
-        <li>Technical lead on monitoring platforms (AlsoEnergy, Power Factors, Locus, Draker, Skytron), aerial thermography (Raptor Maps, Zeitview) and inverter and tracker OEMs.</li>
-        <li>Performance analysis of operating plants: PR and availability, soiling rates, I-V curve traces.</li>
+        <li>Led site onboarding, SCADA troubleshooting, monitoring and BESS for the fleet.</li>
+        <li>Moved monitoring from reactive data handling to proactive diagnostics, with a knowledge base of troubleshooting practice.</li>
+        <li>Recovered $1M from offtakers through a wind curtailment initiative built on clear calculations and negotiation.</li>
+        <li>Brought fleet performance data into Power BI, built a Raptor Maps API integration for module health, a weather-alerts dashboard and a soiling-rate tool.</li>
       </ul></div></div>
-    <div class="xp-row"><span class="label">2018 – 2021</span><div class="xp-body"><p><strong>Cypress Creek Renewables</strong> · Operations Engineering Manager, then Director and Senior Director of Control Center Operations</p>
+    <div class="xp-row"><span class="label">2018 – 2021 · Durham, NC</span><div class="xp-body">
+      <p><strong>Cypress Creek Renewables</strong></p>
+      <p class="role">Senior Director of Control Center Operations · 2020 – 2021<span class="sub">Director of Control Center Operations, and Operations Engineering Manager · 2018 – 2020</span></p>
+      <p class="scope">Fleet grown from 1 GW to 3.5 GW+ across 15 states · 5+ direct reports · 20+ control-center operators</p>
       <ul>
-        <li>Managed the fleet through its growth from 1 GW to more than 3 GW, running the control room: 24/7 remote monitoring and dispatch of the response to plant outages.</li>
-        <li>Ran the Power Factors contract and onboarded 2 GW of the fleet onto the platform.</li>
-        <li>Led the thermal imaging program for the fleet.</li>
-        <li>Owned maintenance planning and scheduling.</li>
-        <li>Technical lead for plant communications: datalogger configuration, Modbus and remote connectivity.</li>
-        <li>Grew from engineering manager to senior director over three years.</li>
+        <li>Ran the 24/7/365 control room and led the operations engineering, reliability, and planning and scheduling teams, keeping contractual availability above 99.5%.</li>
+        <li>Managed the Power Factors contract and onboarded 2 GW of the fleet onto the platform.</li>
+        <li>Led the fleet's thermal imaging program.</li>
+        <li>Recruited and developed a team of 8 engineers while the fleet more than tripled, and kept the organisation above its KPIs through the remote COVID-19 transition.</li>
+        <li>Cut monthly reporting time by 50% with automation, designed a root-cause investigation method for underperforming sites, and built tools to keep vegetation management costs under control.</li>
+        <li>Grew the team from modem troubleshooting to remote diagnostics and failure analysis, including a web interface for remote diagnosis of Solectria central inverters.</li>
       </ul></div></div>
-    <div class="xp-row"><span class="label">2010 – 2017 · Texas</span><div class="xp-body"><p><strong>Royal Dutch Shell</strong>, Deer Park · Production support, rotating equipment and site maintenance engineer</p>
+    <div class="xp-row"><span class="label">2010 – 2017 · Deer Park, TX</span><div class="xp-body">
+      <p><strong>Royal Dutch Shell</strong>, Deer Park refinery and chemical plant</p>
+      <p class="role">Site Maintenance Engineer and Analyst · 2015 – 2017<span class="sub">Production Support Engineer · 2012 – 2014 · Rotating Equipment Engineer · 2010 – 2012</span></p>
       <ul>
-        <li>Used data to give maintenance leadership insight into equipment performance, and brought machine-learning ideas to move from preventive to predictive maintenance.</li>
-        <li>Investigated maintenance incidents, ran root cause analyses and recommended fixes to stop repeat failures.</li>
-        <li>Planned and executed major maintenance projects and turnaround work with cross-functional teams.</li>
-        <li>Mentored new maintenance engineers.</li>
+        <li>Turned maintenance KPIs into management and financial dashboards at one of Shell's largest facilities, and introduced machine learning on machinery failures to move toward predictive maintenance.</li>
+        <li>Cut centrifugal pump repair times by 4x through a time-to-repair analysis of scheduling and supply bottlenecks.</li>
+        <li>Developed a causal-reasoning method for identifying and mitigating reliability threats, later deployed across Shell globally.</li>
+        <li>Delivered projects of up to $2M, including a $1M catalytic reactor turnaround completed in half the industry-standard time.</li>
+        <li>Planned screw compressor overhauls of up to $300K and wrote site procedures for temporary pumps and EPA-compliant refrigeration maintenance.</li>
+      </ul></div></div>
+    <div class="xp-row"><span class="label">Recognition</span><div class="xp-body">
+      <ul>
+        <li>Cubico DRIVE Award for Value Creation, 2025</li>
+        <li>Speaker at SAMNA 2023 and RaptorCon 2023</li>
+        <li>M.Sc. thesis on an open-source monitoring platform for isolated PV systems, awarded Matrícula de Honor</li>
       </ul></div></div>
   </div>
 </section>
