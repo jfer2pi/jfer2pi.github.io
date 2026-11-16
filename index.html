@@ -190,15 +190,15 @@ footer { color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--ru
   <div class="sec-head">
     <span class="label">Open-source tools · geospatial and data QC</span>
     <h2>From drawings and sensors to structured data</h2>
-    <p>Two tools that turn messy engineering inputs into something a model or a map can use. Both are on GitHub.</p>
+    <p>Two tools that turn messy engineering inputs into something a model or a map can use.</p>
   </div>
   <article class="proj">
-    <h3><a href="https://github.com/jfer2pi/pid-to-knowledge-graph/tree/solar-layout-to-geo/skills/solar-layout-to-geo">Solar layout to geo</a></h3>
+    <h3>Solar layout to geo</h3>
     <p>Turns the layout PDF in a public project drawing set into GIS layers and a full device hierarchy, with no CAD file needed: <span class="mono">station &gt; inverter &gt; combiner box &gt; string</span>, with module counts at every level. Output is GeoJSON, KMZ for Google Earth and Shapefile, georeferenced against surveyed or published coordinates.</p>
     <ul>
       <li>Four routes, because drawings differ: CAD layer names, printed labels on per-inverter sheets, drawing style alone on flattened sheets, and traced cables with OCR'd leader labels</li>
       <li>Printed totals are the acceptance test; QA flags where the drawing contradicts itself, and every derived level is marked as derived</li>
-      <li>Packaged as a Claude skill with Python scripts; extends Scott Duncan's P&amp;ID to Knowledge Graph skill</li>
+      <li>Packaged as a Claude skill with Python scripts; builds on Scott Duncan's P&amp;ID to Knowledge Graph skill</li>
     </ul>
     <div class="tags"><span class="tag">Python</span><span class="tag">PDF vector parsing</span><span class="tag">georeferencing</span><span class="tag">GeoJSON · KMZ · Shapefile</span></div>
   </article>
