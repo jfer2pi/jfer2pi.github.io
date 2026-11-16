@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fernando Rodríguez Alvarado · Solar PV Performance &amp; Operations</title>
+<meta name="description" content="Fernando Rodríguez Alvarado, PE: solar PV performance and operations leader in Madrid. 8 years running fleets up to 3.5 GW, R analytics and open-data solar dashboards.">
+<meta name="author" content="Fernando Rodríguez Alvarado">
+<meta name="google-site-verification" content="BVgb4nkGGujs4fOaRvi41wmhrdz32XSY1JerF44JmZI">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://jfer2pi.github.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='9' fill='%23b8740f'/%3E%3C/svg%3E">
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="Fernando Rodríguez Alvarado">
+<meta property="og:title" content="Fernando Rodríguez Alvarado · Solar PV Performance &amp; Operations">
+<meta property="og:description" content="Fernando Rodríguez Alvarado, PE: solar PV performance and operations leader in Madrid. 8 years running fleets up to 3.5 GW, R analytics and open-data solar dashboards.">
+<meta property="og:url" content="https://jfer2pi.github.io/">
+<meta property="og:image" content="https://jfer2pi.github.io/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="profile:first_name" content="Fernando">
+<meta property="profile:last_name" content="Rodríguez Alvarado">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fernando Rodríguez Alvarado · Solar PV Performance &amp; Operations">
+<meta name="twitter:description" content="Fernando Rodríguez Alvarado, PE: solar PV performance and operations leader in Madrid. 8 years running fleets up to 3.5 GW, R analytics and open-data solar dashboards.">
+<meta name="twitter:image" content="https://jfer2pi.github.io/og-image.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Fernando Rodríguez Alvarado", "alternateName": ["Fernando Rodriguez Alvarado", "Juan Fernando Rodríguez Alvarado", "jfer2pi"], "url": "https://jfer2pi.github.io/", "image": "https://jfer2pi.github.io/og-image.png", "jobTitle": "Solar Performance Manager", "worksFor": {"@type": "Organization", "name": "Cubico Sustainable Investments"}, "address": {"@type": "PostalAddress", "addressLocality": "Madrid", "addressCountry": "ES"}, "alumniOf": [{"@type": "CollegeOrUniversity", "name": "Massachusetts Institute of Technology"}, {"@type": "CollegeOrUniversity", "name": "Universidad Politécnica de Madrid"}], "hasCredential": {"@type": "EducationalOccupationalCredential", "credentialCategory": "license", "name": "Professional Engineer (PE), North Carolina"}, "knowsAbout": ["Solar PV performance", "Asset performance management", "Technical asset management", "SCADA", "Performance ratio", "Soiling analysis", "Energy yield assessment", "R programming", "Shiny", "Geospatial data extraction", "GIS georeferencing", "Machine learning for sensor QC"], "knowsLanguage": ["es", "en", "it"], "sameAs": ["https://www.linkedin.com/in/jfer2pi", "https://github.com/jfer2pi"]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one narrow reading column; the hero carries a measured POA day curve, sections read like a plant data sheet. */
+:root {
+  --paper: #f2f4f1;
+  --panel: #e7ebe6;
+  --ink: #17222b;
+  --muted: #5a6670;
+  --rule: #c9d1cc;
+  --sun: #b8740f;
+  --sky: #2f6f8f;
+  --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #10171d; --panel: #18222a; --ink: #e4e9e6; --muted: #93a0a8;
+    --rule: #2a3741; --sun: #e8a43c; --sky: #6fb3d2; color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font: 16px/1.6 var(--body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.wrap { max-width: 880px; margin: 0 auto; padding-block: 56px 72px; display: grid; gap: 72px; }
+a { color: var(--sky); text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--sun); outline-offset: 3px; }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; line-height: 1.1; }
+h1 { font-size: clamp(2.4rem, 6vw, 3.8rem); font-weight: 700; letter-spacing: -0.02em; }
+h2 { font-size: 1.6rem; font-weight: 700; }
+h3 { font-size: 1.2rem; font-weight: 700; }
+p { margin: 0; max-width: 65ch; }
+.label { font: 500 0.75rem/1.3 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.mono { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+
+/* hero */
+header { display: grid; gap: 20px; }
+.lede { font-size: 1.2rem; color: var(--ink); }
+.lede-2 { font-size: 1.05rem; color: var(--muted); }
+.facts { display: flex; flex-wrap: wrap; gap: 8px 20px; font: 0.9rem var(--mono); color: var(--muted); }
+.links { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn { display: inline-block; padding: 9px 16px; border: 1px solid var(--rule); border-radius: 6px; color: var(--ink); text-decoration: none; font-weight: 500; }
+.btn:hover { border-color: var(--sun); }
+.btn.primary { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+figure.curve { margin: 8px 0 0; display: grid; gap: 6px; }
+figure.curve svg { width: 100%; height: auto; display: block; }
+figure.curve img { width: 100%; height: auto; display: block; border-radius: 8px; }
+figcaption { font: 0.78rem var(--mono); color: var(--muted); }
+
+section { display: grid; gap: 24px; }
+.sec-head { display: grid; gap: 8px; border-top: 1px solid var(--rule); padding-top: 20px; }
+
+/* fleet series table */
+.table-wrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; min-width: 620px; font-size: 0.92rem; }
+th, td { text-align: left; padding: 12px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { font: 500 0.72rem var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+td.n { font-family: var(--mono); color: var(--sun); white-space: nowrap; }
+table.plain { min-width: 560px; }
+table.plain td:first-child { white-space: nowrap; }
+table.plain td.ex { font: 0.82rem/1.5 var(--mono); color: var(--sun); }
+td a { font-weight: 600; }
+.live { display: inline-block; margin-top: 4px; font: 500 0.75rem var(--mono); color: var(--sun); text-decoration: none; border: 1px solid var(--sun); border-radius: 4px; padding: 1px 7px; }
+.live:hover { background: var(--sun); color: var(--paper); }
+
+/* project entries */
+.projects { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); }
+.proj { background: var(--panel); border-radius: 8px; padding: 22px; display: grid; gap: 12px; align-content: start; min-width: 0; }
+.proj ul { margin: 0; padding-left: 18px; display: grid; gap: 4px; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag { font: 0.75rem var(--mono); padding: 2px 8px; border: 1px solid var(--rule); border-radius: 4px; color: var(--muted); }
+
+/* capabilities */
+.caps { display: grid; gap: 0; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); border-top: 1px solid var(--rule); }
+.cap { padding: 18px 16px 18px 0; border-bottom: 1px solid var(--rule); display: grid; gap: 6px; min-width: 0; }
+.cap p { color: var(--muted); font-size: 0.95rem; }
+
+/* experience */
+.xp { display: grid; gap: 0; }
+.xp-row { display: grid; grid-template-columns: 180px 1fr; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--rule); }
+.xp-row .label { padding-top: 3px; }
+.xp-body { display: grid; gap: 8px; min-width: 0; }
+.xp-body ul { margin: 0; padding-left: 18px; display: grid; gap: 4px; color: var(--muted); font-size: 0.95rem; }
+.sub { display: block; color: var(--muted); font-size: 0.88rem; font-weight: 400; }
+.role { font-weight: 500; }
+.scope { font: 0.82rem/1.5 var(--mono); color: var(--sun); }
+.xp-row { padding: 20px 0; }
+@media (max-width: 560px) { .xp-row { grid-template-columns: 1fr; gap: 4px; } }
+
+footer { color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--rule); padding-top: 20px; display: grid; gap: 6px; }
+@media (prefers-reduced-motion: no-preference) {
+  #poa-line { stroke-dasharray: 1400; stroke-dashoffset: 1400; animation: draw 1.6s ease-out 0.2s forwards; }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <span class="label">Solar PV performance engineering · Madrid</span>
+  <h1>Fernando Rodríguez Alvarado</h1>
+  <p class="lede">I keep utility-scale solar plants producing what they should. I've spent eight years leading solar performance and operations teams on fleets of up to 3.5 GW across the US, Europe and Latin America, and I build the analytics in R that find the lost energy.</p>
+  <p class="lede-2">Before solar, I spent seven years as a maintenance and reliability engineer at Shell. That's where I learned to build processes, standardize how work gets done, find efficiencies and cut waste, with safety at the center of every decision. I bring the same discipline to renewables.</p>
+  <div class="facts">
+    <span>PE, North Carolina</span><span>MIT, Mechanical Engineering</span><span>M.Sc. Solar PV</span><span>MBA, Quantic</span><span>ES · EN · IT</span>
+  </div>
+  <div class="links">
+    <a class="btn primary" href="#work">See the work</a>
+    <a class="btn" href="https://github.com/jfer2pi">GitHub @jfer2pi</a>
+  </div>
+  <figure class="curve" aria-label="Plane-of-array irradiance over a day: a single-axis tracker against fixed tilt">
+    <svg viewBox="0 0 880 200" role="img">
+      <g stroke="var(--rule)" stroke-width="1">
+        <line x1="40" y1="170" x2="860" y2="170"/>
+        <line x1="40" y1="20" x2="40" y2="170"/>
+      </g>
+      <g font-family="IBM Plex Mono, monospace" font-size="11" fill="var(--muted)">
+        <text x="40" y="188">06:00</text><text x="430" y="188" text-anchor="middle">12:00</text><text x="860" y="188" text-anchor="end">18:00</text>
+        <text x="34" y="24" text-anchor="end">1000</text><text x="34" y="174" text-anchor="end">0</text>
+      </g>
+      <path id="fixed-line" fill="none" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="4 4"/>
+      <path id="poa-line" fill="none" stroke="var(--sun)" stroke-width="2.5"/>
+      <g font-family="IBM Plex Mono, monospace" font-size="11">
+        <text x="700" y="44" fill="var(--sun)">tracker POA</text>
+        <text x="700" y="60" fill="var(--muted)">fixed tilt</text>
+      </g>
+    </svg>
+    <figcaption>Clear-sky plane-of-array irradiance, W/m², single-axis tracker vs fixed tilt. Most of my days are spent on the gap between curves like these and what the SCADA says.</figcaption>
+  </figure>
+</header>
+
+<section id="work">
+  <div class="sec-head">
+    <span class="label">Open-data series · 5 countries</span>
+    <h2>Solar PV Fleet dashboards</h2>
+    <p>Each country publishes its solar fleet differently, or not at all. These apps turn every national source into the same view: a bubble map of plants by stage, the capacity trajectory, capacity by region and by owner, and a searchable site table. Each is one self-contained R/Shiny <span class="mono">app.R</span> with open maps and no API keys.</p>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Country</th><th>Source</th><th>The hard part</th><th>R lines</th></tr></thead>
+      <tbody>
+        <tr><td><a href="https://github.com/jfer2pi/eia_solar_pv">United States</a><br><a class="live" href="https://jfer2pi-pv-us.share.connect.posit.cloud/">Live app</a></td><td>EIA-860M monthly + EIA-860 Schedule 3_3</td><td>Joining array data (tracking, bifacial, MWdc, ILR) onto the monthly inventory, so the owner table shows fleet ILR and tracker share</td><td class="n">1,164</td></tr>
+        <tr><td><a href="https://github.com/jfer2pi/mexico_pv">Mexico</a><br><a class="live" href="https://jfer2pi-pv-mexico.share.connect.posit.cloud/">Live app</a></td><td>GEM Solar Power Tracker + CNE permits</td><td>Tiered matching of government generation permits to plants (exact, strong, possible) and a monthly GitHub Action that flags new releases</td><td class="n">1,203</td></tr>
+        <tr><td><a href="https://github.com/jfer2pi/brazil_pv">Brazil</a><br><a class="live" href="https://jfer2pi-pv-brazil.share.connect.posit.cloud/">Live app</a></td><td>ANEEL SIGA + RALIE</td><td>Equity MW per owner parsed from free-text ownership, cleaning swapped coordinates, and a fallback for a site that blocks foreign traffic</td><td class="n">1,111</td></tr>
+        <tr><td><a href="https://github.com/jfer2pi/australia_pv">Australia</a><br><a class="live" href="https://jfer2pi-pv-australia.share.connect.posit.cloud/">Live app</a></td><td>AEMO NEM + Geoscience Australia</td><td>Three-step geolocation (AEMO, GA name match, Nominatim) and graceful fallbacks when both agencies refuse cloud servers</td><td class="n">1,424</td></tr>
+        <tr><td><a href="https://github.com/jfer2pi/spain_pv">Spain</a><br><a class="live" href="https://jfer2pi-pv-spain.share.connect.posit.cloud/">Live app</a></td><td>GEM tracker + Red Eléctrica REData</td><td>Rejecting a thin official registry for a usable one, and fitting a 3,990-phase build inside a 60-second cloud start limit</td><td class="n">897</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="sec-head">
+    <span class="label">Open-source tools · geospatial and data QC</span>
+    <h2>From drawings and sensors to structured data</h2>
+    <p>Two tools that turn messy engineering inputs into something a model or a map can use. Both are on GitHub.</p>
+  </div>
+  <article class="proj">
+    <h3><a href="https://github.com/jfer2pi/pid-to-knowledge-graph/tree/solar-layout-to-geo/skills/solar-layout-to-geo">Solar layout to geo</a></h3>
+    <p>Turns the layout PDF in a public project drawing set into GIS layers and a full device hierarchy, with no CAD file needed: <span class="mono">station &gt; inverter &gt; combiner box &gt; string</span>, with module counts at every level. Output is GeoJSON, KMZ for Google Earth and Shapefile, georeferenced against surveyed or published coordinates.</p>
+    <ul>
+      <li>Four routes, because drawings differ: CAD layer names, printed labels on per-inverter sheets, drawing style alone on flattened sheets, and traced cables with OCR'd leader labels</li>
+      <li>Printed totals are the acceptance test; QA flags where the drawing contradicts itself, and every derived level is marked as derived</li>
+      <li>Packaged as a Claude skill with Python scripts; extends Scott Duncan's P&amp;ID to Knowledge Graph skill</li>
+    </ul>
+    <div class="tags"><span class="tag">Python</span><span class="tag">PDF vector parsing</span><span class="tag">georeferencing</span><span class="tag">GeoJSON · KMZ · Shapefile</span></div>
+  </article>
+  <div class="table-wrap">
+    <table class="plain">
+      <thead><tr><th>Plant</th><th>The drawing</th><th>Extracted</th><th>How it was checked</th></tr></thead>
+      <tbody>
+        <tr><td>Spain<br><span class="mono">47 MWdc</span></td><td>Design package inside a 105-page project PDF; one zoomed sheet per inverter block</td><td class="ex">14 stations · 224 combiners · 3,616 strings · 94,016 modules</td><td>Module total equals the printed total; fit to ETRS89 UTM 29N at 0.48 m RMSE against surveyed trench crossings</td></tr>
+        <tr><td>Spain<br><span class="mono">50 MWp</span></td><td>Flattened execution project: no layers, no scale, no hierarchy labels</td><td class="ex">2,448 trackers · 251 combiners across 14 blocks</td><td>Tracker count matches the printed 180 or 162 per block for all 14 blocks; strings flagged as derived</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <figure class="curve">
+    <img src="combiner-maps.webp" width="1760" height="896" loading="lazy" alt="Two Spanish solar plants drawn from georeferenced combiner box areas, each combiner colored by the inverter station it feeds: 47 MWdc with 224 combiners and 50 MWp with 251.">
+    <figcaption>Combiner boxes extracted from two layout PDFs and georeferenced, colored by the station each feeds. On the flattened 50 MWp drawing the combiner level is derived, not read.</figcaption>
+  </figure>
+  <figure class="curve">
+    <img src="site-linework.webp" width="1760" height="839" loading="lazy" alt="Two plant sites drawn from extracted layout geometry: the fence in amber, access roads in grey, streams in blue and, on the right-hand site, the medium-voltage cable in green.">
+    <figcaption>Site features read straight from two layout PDFs and georeferenced, at the same scale: fence (amber), access roads (grey), streams (blue), MV cable (green). Left: flattened execution project, provisional placement. Right: design package, fitted to surveyed crossings.</figcaption>
+  </figure>
+  <div class="projects">
+    <article class="proj">
+      <h3><a href="https://github.com/jfer2pi/tracker_poa_classifier">Tracker POA classifier</a></h3>
+      <p>Decides, for every plane-of-array sensor and every day, whether it was tracking, stowed or stuck (east, west, flat or part of the day), or faulty, so its data can be kept or discarded with confidence. It needs only the POA sensors and a satellite reference: no tracker angles, no SCADA status tags, no coordinates.</p>
+      <ul>
+        <li>Peer and satellite references, with a roughness test that separates a stuck tracker under a clear sky from a passing cloud</li>
+        <li>A random forest trained on days reviewed by eye verifies the stow calls</li>
+        <li>Every call carries a confidence, and sensor faults such as frozen or zero readings are screened out first</li>
+      </ul>
+      <div class="tags"><span class="tag">R</span><span class="tag">rule-based + random forest</span><span class="tag">data QC</span></div>
+    </article>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <span class="label">Other open-data apps</span>
+    <h2>Beyond solar</h2>
+  </div>
+  <div class="projects">
+    <article class="proj">
+      <h3><a href="https://github.com/jfer2pi/combustibl_es">Fuel·ES</a></h3>
+      <p>Fuel prices at all ~12,000 Spanish service stations, plus a route planner that tells you where to stop and how many litres to buy.</p>
+      <ul>
+        <li>Exact dynamic-programming optimiser over stops and tank levels, never below your reserve</li>
+        <li>Prices the time lost to detours, not just the fuel</li>
+        <li>OSRM routing, corridor search, saving vs the route median</li>
+      </ul>
+      <div class="tags"><span class="tag">R/Shiny</span><span class="tag">optimisation</span><span class="tag">MITECO open data</span></div>
+    </article>
+    <article class="proj">
+      <h3><a href="https://github.com/jfer2pi/tren_es">Renfe Live</a></h3>
+      <p>Live positions of Spain's high-speed, long-distance and regional trains on an open rail map.</p>
+      <ul>
+        <li>Parses the GTFS-RT feed and joins static GTFS for routes and stations</li>
+        <li>Flags data anomalies: impossible jumps, duplicates, frozen positions</li>
+        <li>Bunching indicator for moving trains closing on stopped ones</li>
+      </ul>
+      <div class="tags"><span class="tag">R/Shiny</span><span class="tag">GTFS-RT</span><span class="tag">data QC</span></div>
+    </article>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <span class="label">Day job</span>
+    <h2>Performance analytics I build</h2>
+    <p>Most of this runs on operating plants and stays internal. Happy to walk through the methods.</p>
+  </div>
+  <div class="caps">
+    <div class="cap"><h3>Irradiance QC</h3><p>Onsite pyranometers checked against satellite references, with tracker deviation diagnostics for SAT, DAT and fixed tilt.</p></div>
+    <div class="cap"><h3>Loss attribution</h3><p>Digital-twin waterfalls following IEC 61724-1: availability, clipping, curtailment, soiling and residual.</p></div>
+    <div class="cap"><h3>Soiling and cleaning</h3><p>Soiling rates extracted from DC current and irradiance where no soiling station exists, and wash timing optimised against them.</p></div>
+    <div class="cap"><h3>Tracker diagnostics</h3><p>Measured angles benchmarked against ideal backtracking, and stow detection from POA sensors alone.</p></div>
+    <div class="cap"><h3>Energy yield</h3><p>Operational yield assessments with long-term climatology correction and Monte Carlo uncertainty (P50/P90).</p></div>
+    <div class="cap"><h3>SCADA pipelines</h3><p>API extraction from monitoring platforms and historians, daily data-availability alerts and string-level exception reports.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <span class="label">Experience · 8 years in renewables, 7 in oil and gas</span>
+    <h2>Where I've worked</h2>
+  </div>
+  <div class="xp">
+    <div class="xp-row"><span class="label">2023 – now · Madrid</span><div class="xp-body">
+      <p><strong>Cubico Sustainable Investments</strong></p>
+      <p class="role">Solar Performance Manager · 2026 – now<span class="sub">Senior Solar Performance Analyst · 2023 – 2026</span></p>
+      <p class="scope">120+ sites · Spain, Italy, UK, US, Mexico, Colombia, Uruguay</p>
+      <ul>
+        <li>Sets the performance and data-quality standards for the global portfolio and directs the team's analytical roadmap.</li>
+        <li>Led the selection, procurement and implementation of BaxEnergy as the global monitoring platform: a 9-vendor evaluation across functions and countries, a 33% cost reduction negotiated on the contract, and 80+ sites (about 1 GW) onboarded with a quality review of each, joining the Italian fleet already on the platform. Manages the platform for all 120+ sites today.</li>
+        <li>Directed the US portfolio recovery plan at 5 major sites (100+ MWac each), splitting losses into soiling, inverter availability, DC health and curtailment, for $1M+ in recognised value. Recognised with the 2025 DRIVE Award for Value Creation.</li>
+        <li>Negotiated and deployed drone-in-a-box thermal scanning for predictive maintenance.</li>
+        <li>Led the emergency recovery of a 100 MW US plant after a tornado: third-party EL imaging and inspections, the restoration plan, EPC agreements and post-recovery testing.</li>
+        <li>Built a 7-module training program (guides and video) to bring country teams in 7 countries onto the platform, and mentored the US performance team to full independence.</li>
+        <li>Set a standard KPI framework for every technology in the fleet, including tracker performance and availability guarantees in O&amp;M and EPC contracts.</li>
+        <li>Built the R codebase that integrates 10+ data sources (BaxEnergy, Greenbyte, Nispera, Canary, Solcast, SolarGIS, Raptor Maps, Zeitview, Isotrol, GPM, Power Factors), plus a module-manufacturer performance method tested on 100+ inverter datasets.</li>
+      </ul></div></div>
+    <div class="xp-row"><span class="label">2021 – 2023 · Remote</span><div class="xp-body">
+      <p><strong>Greenbacker Capital</strong></p>
+      <p class="role">Vice President of Engineering (Operations)</p>
+      <p class="scope">Team of 5 · Distributed solar, wind and storage fleet</p>
+      <ul>
+        <li>Led site onboarding, SCADA troubleshooting, monitoring and BESS for the fleet.</li>
+        <li>Moved monitoring from reactive data handling to proactive diagnostics, with a knowledge base of troubleshooting practice.</li>
+        <li>Recovered $1M from offtakers through a wind curtailment initiative built on clear calculations and negotiation.</li>
+        <li>Brought fleet performance data into Power BI, built a Raptor Maps API integration for module health, a weather-alerts dashboard and a soiling-rate tool.</li>
+      </ul></div></div>
+    <div class="xp-row"><span class="label">2018 – 2021 · Durham, NC</span><div class="xp-body">
+      <p><strong>Cypress Creek Renewables</strong></p>
+      <p class="role">Senior Director of Control Center Operations · 2020 – 2021<span class="sub">Director of Control Center Operations, and Operations Engineering Manager · 2018 – 2020</span></p>
+      <p class="scope">Fleet grown from 1 GW to 3.5 GW+ ($3.2B+ in assets) across 15 states · 5+ direct reports · 20+ control-center operators</p>
+      <ul>
+        <li>Ran the 24/7/365 control room and led the operations engineering, reliability, and planning and scheduling teams, keeping contractual availability above 99.5%.</li>
+        <li>Managed the Power Factors contract and onboarded 2 GW of the fleet onto the platform.</li>
+        <li>Led the fleet's thermal imaging program.</li>
+        <li>Recruited and developed a team of 8 engineers while the fleet more than tripled, and kept the organisation above its KPIs through the remote COVID-19 transition.</li>
+        <li>Cut monthly reporting time by 50% with automation, designed a root-cause investigation method for underperforming sites, and built tools to keep vegetation management costs under control.</li>
+        <li>Grew the team from modem troubleshooting to remote diagnostics and failure analysis, including a web interface for remote diagnosis of Solectria central inverters.</li>
+      </ul></div></div>
+    <div class="xp-row"><span class="label">2010 – 2017 · Deer Park, TX</span><div class="xp-body">
+      <p><strong>Royal Dutch Shell</strong>, Deer Park refinery and chemical plant</p>
+      <p class="role">Site Maintenance Engineer and Analyst · 2015 – 2017<span class="sub">Production Support Engineer · 2012 – 2014 · Rotating Equipment Engineer · 2010 – 2012</span></p>
+      <ul>
+        <li>Turned maintenance KPIs into management and financial dashboards at one of Shell's largest facilities, and introduced machine learning on machinery failures to move toward predictive maintenance.</li>
+        <li>Cut centrifugal pump repair times by 4x through a time-to-repair analysis of scheduling and supply bottlenecks.</li>
+        <li>Developed a causal-reasoning method for identifying and mitigating reliability threats, later deployed across Shell globally.</li>
+        <li>Delivered projects of up to $2M, including a $1M catalytic reactor turnaround completed in half the industry-standard time.</li>
+        <li>Planned screw compressor overhauls of up to $300K and wrote site procedures for temporary pumps and EPA-compliant refrigeration maintenance.</li>
+      </ul></div></div>
+    <div class="xp-row"><span class="label">Recognition</span><div class="xp-body">
+      <ul>
+        <li>Cubico DRIVE Award for Value Creation, 2025</li>
+        <li>Speaker at SAMNA 2023 and RaptorCon 2023</li>
+        <li>M.Sc. thesis on an open-source monitoring platform for isolated PV systems, awarded Matrícula de Honor</li>
+      </ul></div></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <span class="label">Toolkit</span>
+    <h2>How I work</h2>
+    <p>R first: tidyverse, data.table for the heavy lifting, purrr and parallel workers, tidymodels for classifiers, Shiny and Quarto for delivery, pvlib through reticulate. Apps deploy to Posit Connect Cloud from GitHub, with Actions keeping data current. I write these with Claude as a coding partner: the specs, the engineering judgment and the review are mine.</p>
+  </div>
+</section>
+
+<footer>
+  <span>Fernando Rodríguez Alvarado · <a href="https://github.com/jfer2pi">github.com/jfer2pi</a></span>
+  <span>Map data © OpenStreetMap contributors in the linked apps. Site built with Claude's help.</span>
+</footer>
+
+</div>
+<script>
+// Clear-sky POA, rough model: sun elevation over a 06:00-18:00 equinox day.
+(function () {
+  var x0 = 40, x1 = 860, y0 = 170, yTop = 20, n = 120, track = [], fixed = [];
+  for (var i = 0; i <= n; i++) {
+    var t = i / n, h = (t - 0.5) * Math.PI;          // hour angle, -90..90 deg
+    var el = Math.cos(h) * 0.85;                       // sin(elevation) proxy
+    var dni = el > 0 ? 950 * Math.exp(-0.14 / Math.max(el, 0.05)) : 0;
+    var lim = Math.min(Math.abs(h), 60 * Math.PI / 180); // tracker limit 60 deg
+    var trk = dni * Math.cos(Math.abs(h) - lim) + 90 * el;
+    var fix = dni * Math.max(0, Math.cos(h)) * 0.98 + 90 * el;
+    var x = x0 + t * (x1 - x0), s = (y0 - yTop) / 1000;
+    track.push(x.toFixed(1) + "," + (y0 - trk * s).toFixed(1));
+    fixed.push(x.toFixed(1) + "," + (y0 - fix * s).toFixed(1));
+  }
+  document.getElementById("poa-line").setAttribute("d", "M" + track.join("L"));
+  document.getElementById("fixed-line").setAttribute("d", "M" + fixed.join("L"));
+})();
+</script>
+</body>
+</html>
