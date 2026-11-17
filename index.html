@@ -208,16 +208,21 @@ footer { color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--ru
       <tbody>
         <tr><td>Spain<br><span class="mono">47 MWdc</span></td><td>Design package inside a 105-page project PDF; one zoomed sheet per inverter block</td><td class="ex">14 stations · 224 combiners · 3,616 strings · 94,016 modules</td><td>Module total equals the printed total; fit to ETRS89 UTM 29N at 0.48 m RMSE against surveyed trench crossings</td></tr>
         <tr><td>Spain<br><span class="mono">50 MWp</span></td><td>Flattened execution project: no layers, no scale, no hierarchy labels</td><td class="ex">2,448 trackers · 251 combiners across 14 blocks</td><td>Tracker count matches the printed 180 or 162 per block for all 14 blocks; strings flagged as derived</td></tr>
+        <tr><td>Spain<br><span class="mono">40.55 MWp</span></td><td>Flattened execution project, fixed-tilt: no layers, structure types listed in a printed table</td><td class="ex">8 stations · 607 structures · 1,953 strings · 54,684 modules · 30 string inverters on the largest station</td><td>Fit to the 8 printed station coordinates at 0.012 m RMSE (not provisional); the printed module table does not add up by itself, and the QA report logs the difference</td></tr>
       </tbody>
     </table>
   </div>
   <figure class="curve">
     <img src="combiner-maps.webp" width="1760" height="896" loading="lazy" alt="Two Spanish solar plants drawn from georeferenced combiner box areas, each combiner colored by the inverter station it feeds: 47 MWdc with 224 combiners and 50 MWp with 251.">
-    <figcaption>Combiner boxes extracted from two layout PDFs and georeferenced, colored by the station each feeds. Left: 47 MWdc. Right: 50 MWp, where, on the flattened drawing, the combiner level is derived, not read.</figcaption>
+    <figcaption>Combiner boxes extracted from two of the layout PDFs and georeferenced, colored by the station each feeds. Left: 47 MWdc. Right: 50 MWp, where, on the flattened drawing, the combiner level is derived, not read.</figcaption>
   </figure>
   <figure class="curve">
     <img src="site-linework.webp" width="1760" height="839" loading="lazy" alt="Two plant sites drawn from extracted layout geometry: the fence in amber, access roads in grey, streams in blue and, on the left-hand site, the medium-voltage cable in green.">
     <figcaption>Site features read straight from two layout PDFs and georeferenced, at the same scale: fence (amber), access roads (grey), streams (blue), MV cable (green). Left: 47 MWdc design package, fitted to surveyed crossings. Right: 50 MWp flattened execution project, provisional placement.</figcaption>
+  </figure>
+  <figure class="curve">
+    <img src="med-iv.webp" width="1760" height="976" loading="lazy" alt="Left: a fixed-tilt solar plant drawn from georeferenced PV strings colored by the eight transformer stations that collect them, with the medium-voltage cable route in green. Right: a zoom on one station showing its 30 string inverters as separate colored areas.">
+    <figcaption>A third plant, fixed-tilt and fitted to printed station coordinates at 1 cm. Left: strings by station with the MV route. Right: one station broken down to its 30 string inverters. Inverter areas and strings are derived from the drawn structures; station membership is read.</figcaption>
   </figure>
   <div class="projects">
     <article class="proj">
